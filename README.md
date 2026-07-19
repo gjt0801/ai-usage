@@ -30,6 +30,16 @@ ai-usage/
 3. Use prompts from `prompts/codex/` and `prompts/claude-code/`.
 4. Save useful outcomes or failed patterns under `logs/experiments/`.
 
+## Useful Guides
+
+- `workflows/ai-design-loop.md`: default loop for context, design, orchestration, verification, and learning.
+- `playbooks/context-management.md`: keep long AI sessions focused and cheap.
+- `playbooks/agent-design.md`: design reusable agents with narrow roles, stop conditions, and edge tests.
+- `playbooks/multi-agent-orchestration.md`: choose chain, route, parallel, evaluator, or orchestrator-worker patterns.
+- `playbooks/evaluation-gates.md`: verify outputs before trusting or shipping them.
+- `prompts/codex/orchestration-planner.md`: ask Codex to recommend a workflow shape before execution.
+- `prompts/codex/verification-brief.md`: ask Codex to separate facts, assumptions, checks, and risks.
+
 ## Imported Resources
 
 - `vendor/awesome-claude-code-subagents/`: imported from https://github.com/VoltAgent/awesome-claude-code-subagents
