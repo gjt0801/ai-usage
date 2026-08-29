@@ -21,7 +21,12 @@ ai-usage/
   prompts/         reusable prompts grouped by tool
   logs/            experiment notes and retrospectives
   vendor/          imported third-party references
+  seoul-buy-radar/ deployable static app for Seoul purchase screening
 ```
+
+## Apps
+
+- `seoul-buy-radar/`: Seoul apartment purchase screening dashboard. It can be deployed as a static site through GitHub Pages, Vercel, or Netlify.
 
 ## Start Here
 

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="서울 아파트 매수 후보지를 점수화하고 비교하는 개인용 레이더" />
+    <title>서울 매수 레이더</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Seoul Buy Radar</p>
+        <h1>서울 매수 레이더</h1>
+        <p class="subtitle">구별 매수 매력도를 가격, 전세가율, 공급, 교통, 생활 인프라 기준으로 비교합니다.</p>
+      </div>
+      <div class="header-panel" aria-label="현재 필터 요약">
+        <span id="visibleCount">0개 구</span>
+        <strong id="topDistrict">분석 중</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="필터">
+        <label>
+          검색
+          <input id="searchInput" type="search" placeholder="강남, 마포, 성동..." />
+        </label>
+        <label>
+          예산 상한
+          <select id="budgetSelect">
+            <option value="0">전체</option>
+            <option value="90000">9억 이하</option>
+            <option value="120000">12억 이하</option>
+            <option value="160000">16억 이하</option>
+            <option value="220000">22억 이하</option>
+          </select>
+        </label>
+        <label>
+          투자 성향
+          <select id="strategySelect">
+            <option value="balanced">균형형</option>
+            <option value="value">저평가형</option>
+            <option value="growth">성장형</option>
+            <option value="defensive">안정형</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="summary-grid" aria-label="요약 지표">
+        <article>
+          <span>평균 레이더 점수</span>
+          <strong id="avgScore">-</strong>
+        </article>
+        <article>
+          <span>평균 중위 매매가</span>
+          <strong id="avgPrice">-</strong>
+        </article>
+        <article>
+          <span>평균 전세가율</span>
+          <strong id="avgJeonse">-</strong>
+        </article>
+        <article>
+          <span>관심 후보</span>
+          <strong id="watchCount">0</strong>
+        </article>
+      </section>
+
+      <section class="layout">
+        <div class="map-panel">
+          <div class="section-title">
+            <h2>레이더 맵</h2>
+            <span>점수가 높을수록 진하게 표시</span>
+          </div>
+          <div id="radarMap" class="radar-map" aria-label="서울 구별 레이더 점수"></div>
+        </div>
+
+        <div class="ranking-panel">
+          <div class="section-title">
+            <h2>우선순위</h2>
+            <button id="resetButton" type="button">초기화</button>
+          </div>
+          <div id="districtList" class="district-list"></div>
+        </div>
+      </section>
+
+      <section class="detail-panel" aria-live="polite">
+        <div class="section-title">
+          <h2 id="detailTitle">상세 분석</h2>
+          <span id="detailMeta">상위 후보를 선택하세요</span>
+        </div>
+        <div id="detailContent" class="detail-content"></div>
+      </section>
+
+      <section class="note-panel">
+        <h2>데이터 교체 방법</h2>
+        <p>현재 데이터는 샘플입니다. 실사용 시 `data/seoul-districts.json`의 가격, 전세가율, 공급, 교통, 인프라, 메모를 최신 데이터로 바꾸면 앱 점수가 자동 갱신됩니다.</p>
+        <p>이 도구는 개인적인 비교와 기록을 위한 것이며 투자 조언이 아닙니다.</p>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
